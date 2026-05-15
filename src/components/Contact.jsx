@@ -212,7 +212,7 @@ const Contact = () => {
                   <FaLinkedinIn />
                 </a>
 
-                <a href="#"
+                <a href="https://x.com/AlamAlitaj11825"
                   className="w-11 h-11 rounded-full bg-dark-200 flex items-center justify-center text-sky-400 hover:bg-sky-400 hover:text-white transition">
                   <FaTwitter />
                 </a>
@@ -222,7 +222,7 @@ const Contact = () => {
                   <FaInstagram />
                 </a>
 
-                <a href="#"
+                <a href="https://www.facebook.com/profile.php?id=100090441086984"
                   className="w-11 h-11 rounded-full bg-dark-200 flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition">
                   <FaFacebook />
                 </a>
