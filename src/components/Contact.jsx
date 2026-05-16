@@ -76,6 +76,7 @@ const Contact = () => {
           <form
             action="https://formsubmit.co/alitajalam645@gmail.com"
             method="POST"
+            acceptCharset="UTF-8"
             className="space-y-6"
           >
 
@@ -85,7 +86,7 @@ const Contact = () => {
             <input
               type="hidden"
               name="_next"
-              value="https://alitaj-portf1.vercel.app/"
+              value="https://my-portfolio-alpha-pink-40.vercel.app/"
             />
 
             <input
@@ -99,6 +100,11 @@ const Contact = () => {
               name="_template"
               value="table"
             />
+            <input
+  type="hidden"
+  name="_autoresponse"
+  value="Thanks for contacting me. I will reply soon."
+/>
 
             {/* Name */}
             <div>
