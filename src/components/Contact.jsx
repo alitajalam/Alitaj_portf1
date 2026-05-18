@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import {
   FaMapMarkerAlt,
@@ -14,6 +15,48 @@ import {
 const Contact = () => {
   const [location, setLocation] = useState(null);
   const [error, setError] = useState("");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_ucwzpbl",
+        "template_lt3vc4b",
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        "T1vzIYw3oMBqSXGyt"
+      )
+      .then(() => {
+        alert("Message Sent Successfully");
+
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Failed to send message");
+      });
+  };
 
   const handleLocationClick = () => {
     setError("");
@@ -45,7 +88,6 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-dark-200 scroll-mt-24">
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +105,6 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        {/* Main Content */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,68 +113,11 @@ const Contact = () => {
           className="bg-dark-300 rounded-3xl shadow-xl p-10 grid md:grid-cols-2 gap-10"
         >
 
-          {/* Contact Form */}
           <form
-  action="https://formsubmit.co/alitajalam645@gmail.com"
-  method="POST"
-  acceptCharset="UTF-8"
-  target="_blank"
-  className="space-y-6"
->
+            onSubmit={handleSubmit}
+            className="space-y-6"
+          >
 
-<input type="hidden" name="_captcha" value="false" />
-
-<input
-  type="hidden"
-  name="_next"
-  value="https://my-portfolio-alpha-pink-40.vercel.app/"
-/>
-
-<input
-  type="hidden"
-  name="_subject"
-  value="Portfolio Contact Message"
-/>
-
-<input
-  type="hidden"
-  name="_template"
-  value="table"
-/>
-
-<input
-  type="hidden"
-  name="_autoresponse"
-  value="Thanks for contacting me. I will reply soon."
-/>
-
-            {/* Hidden Inputs */}
-            <input type="hidden" name="_captcha" value="false" />
-
-            <input
-              type="hidden"
-              name="_next"
-              value="https://my-portfolio-alpha-pink-40.vercel.app/"
-            />
-
-            <input
-              type="hidden"
-              name="_subject"
-              value="New Portfolio Message!"
-            />
-
-            <input
-              type="hidden"
-              name="_template"
-              value="table"
-            />
-            <input
-  type="hidden"
-  name="_autoresponse"
-  value="Thanks for contacting me. I will reply soon."
-/>
-
-            {/* Name */}
             <div>
               <label className="block text-gray-300 mb-2 text-sm">
                 Your Name
@@ -142,13 +126,14 @@ const Contact = () => {
               <input
                 type="text"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 required
                 placeholder="Enter your name"
                 className="w-full h-12 px-4 rounded-lg bg-dark-200 border border-gray-700 text-white focus:outline-none focus:border-purple"
               />
             </div>
 
-            {/* Email */}
             <div>
               <label className="block text-gray-300 mb-2 text-sm">
                 Email Address
@@ -157,13 +142,14 @@ const Contact = () => {
               <input
                 type="email"
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
                 required
                 placeholder="Enter your email"
                 className="w-full h-12 px-4 rounded-lg bg-dark-200 border border-gray-700 text-white focus:outline-none focus:border-purple"
               />
             </div>
 
-            {/* Message */}
             <div>
               <label className="block text-gray-300 mb-2 text-sm">
                 Your Message
@@ -172,25 +158,25 @@ const Contact = () => {
               <textarea
                 rows="5"
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
                 required
                 placeholder="Write your message..."
                 className="w-full p-4 rounded-lg bg-dark-200 border border-gray-700 text-white resize-none focus:outline-none focus:border-purple"
-              ></textarea>
+              />
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               className="w-full bg-purple hover:bg-purple-700 text-white py-3 rounded-lg font-semibold transition duration-300"
             >
               Send Message
             </button>
+
           </form>
 
-          {/* Right Side Info */}
           <div className="flex flex-col justify-center">
 
-            {/* Location */}
             <div className="flex items-start gap-4 mb-8">
 
               <div
@@ -223,9 +209,9 @@ const Contact = () => {
                   </p>
                 )}
               </div>
+
             </div>
 
-            {/* Email */}
             <div className="flex items-start gap-4 mb-8">
 
               <div className="bg-dark-200 p-3 rounded-full text-purple">
@@ -241,9 +227,9 @@ const Contact = () => {
                   alitajalam645@gmail.com
                 </p>
               </div>
+
             </div>
 
-            {/* Phone */}
             <div className="flex items-start gap-4 mb-10">
 
               <div className="bg-dark-200 p-3 rounded-full text-purple">
@@ -259,9 +245,9 @@ const Contact = () => {
                   +91 7250302680
                 </p>
               </div>
+
             </div>
 
-            {/* Social Media */}
             <div>
               <h4 className="text-white font-semibold mb-5">
                 Follow Me
@@ -273,7 +259,6 @@ const Contact = () => {
                   href="https://github.com/alitajalam"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-dark-200 flex items-center justify-center text-purple hover:bg-purple hover:text-white transition"
                 >
                   <FaGithub />
                 </a>
@@ -282,7 +267,6 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/alitajalam645/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-dark-200 flex items-center justify-center text-blue-400 hover:bg-blue-400 hover:text-white transition"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -291,7 +275,6 @@ const Contact = () => {
                   href="https://x.com/AlamAlitaj11825"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-dark-200 flex items-center justify-center text-sky-400 hover:bg-sky-400 hover:text-white transition"
                 >
                   <FaTwitter />
                 </a>
@@ -300,25 +283,22 @@ const Contact = () => {
                   href="https://www.instagram.com/alitaj_00/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-dark-200 flex items-center justify-center text-pink-400 hover:bg-pink-400 hover:text-white transition"
                 >
                   <FaInstagram />
                 </a>
 
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-dark-200 flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition"
-                >
+                <a href="#">
                   <FaFacebook />
                 </a>
 
               </div>
+
             </div>
 
           </div>
+
         </motion.div>
+
       </div>
     </section>
   );
