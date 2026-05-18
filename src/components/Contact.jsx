@@ -279,7 +279,7 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="https://www.facebook.com/profile.php?id=100090441086984"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-11 h-11 rounded-full bg-dark-200 flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition"
