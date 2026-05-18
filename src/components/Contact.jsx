@@ -74,11 +74,38 @@ const Contact = () => {
 
           {/* Contact Form */}
           <form
-            action="https://formsubmit.co/alitajalam645@gmail.com"
-            method="POST"
-            acceptCharset="UTF-8"
-            className="space-y-6"
-          >
+  action="https://formsubmit.co/alitajalam645@gmail.com"
+  method="POST"
+  acceptCharset="UTF-8"
+  target="_blank"
+  className="space-y-6"
+>
+
+<input type="hidden" name="_captcha" value="false" />
+
+<input
+  type="hidden"
+  name="_next"
+  value="https://my-portfolio-alpha-pink-40.vercel.app/"
+/>
+
+<input
+  type="hidden"
+  name="_subject"
+  value="Portfolio Contact Message"
+/>
+
+<input
+  type="hidden"
+  name="_template"
+  value="table"
+/>
+
+<input
+  type="hidden"
+  name="_autoresponse"
+  value="Thanks for contacting me. I will reply soon."
+/>
 
             {/* Hidden Inputs */}
             <input type="hidden" name="_captcha" value="false" />
