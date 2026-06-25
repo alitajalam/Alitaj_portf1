@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Lock, Mail } from "lucide-react";
+import { Lock, Mail, Eye, EyeOff } from "lucide-react";
 
 const Admin = () => {
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
+const [showPassword, setShowPassword] = useState(false);
 
 const handleLogin = (e) => {
     e.preventDefault();
@@ -22,14 +23,12 @@ const handleLogin = (e) => {
 
 return (
     <section className="min-h-screen flex items-center justify-center bg-dark-200 px-6">
-
     <motion.div
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         className="w-full max-w-md bg-dark-300 rounded-3xl shadow-2xl p-8"
     >
-
         {/* Heading */}
         <div className="text-center mb-8">
         <h2 className="text-4xl font-bold text-white mb-2">
@@ -74,17 +73,29 @@ return (
             <Lock className="text-purple mr-3" size={18} />
 
             <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="Enter your password"
                 className="w-full h-12 bg-transparent text-white focus:outline-none"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
             />
+
+            <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="text-purple hover:text-white transition"
+            >
+                {showPassword ? (
+                <EyeOff size={20} />
+                ) : (
+                <Eye size={20} />
+                )}
+            </button>
             </div>
         </div>
 
-          {/* Button */}
+          {/* Login Button */}
         <button
             type="submit"
             className="w-full bg-purple hover:bg-purple-700 text-white py-3 rounded-lg font-semibold transition duration-300"
@@ -93,7 +104,6 @@ return (
         </button>
 
         </form>
-
     </motion.div>
     </section>
 );
