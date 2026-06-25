@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Lock, Mail, Eye, EyeOff } from "lucide-react";
+import { Lock, Mail } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Admin = () => {
@@ -92,13 +92,9 @@ return (
             <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="text-purple hover:text-white transition ml-2"
+                className="text-purple font-semibold ml-2"
             >
-                {showPassword ? (
-                <EyeOff size={20} />
-                ) : (
-                <Eye size={20} />
-                )}
+                {showPassword ? "HIDE" : "SHOW"}
             </button>
             </div>
         </div>
