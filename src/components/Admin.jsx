@@ -12,7 +12,7 @@ const handleLogin = (e) => {
     // Dummy Authentication
     if (
     email === "admin@gmail.com" &&
-    password === "admin123"
+    password === "Alam@12345"
     ) {
     alert("Login Successful ✅");
     } else {
