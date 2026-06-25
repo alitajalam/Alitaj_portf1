@@ -12,7 +12,7 @@ const handleLogin = (e) => {
 
     // Dummy Authentication
     if (
-    email === "admin@gmail.com" &&
+    email === "alitajalam645@gmail.com" &&
     password === "Alam@12345"
     ) {
     alert("Login Successful ✅");
@@ -36,7 +36,7 @@ return (
         </h2>
 
         <p className="text-gray-400">
-            Enter your credentials to continue
+            Login to continue
         </p>
         </div>
 
@@ -84,7 +84,7 @@ return (
             <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="text-purple hover:text-white transition"
+                className="text-purple hover:text-white transition ml-2"
             >
                 {showPassword ? (
                 <EyeOff size={20} />
