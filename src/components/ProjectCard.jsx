@@ -5,11 +5,11 @@ const ProjectCard = ({ title, description, image, tech }) => {
     <div className="bg-dark-300 rounded-2xl p-5 flex flex-col justify-between h-full hover:-translate-y-2 transition duration-300">
       
       {/* Image */}
-    <div className="w-full h-72 bg-black rounded-xl flex items-center justify-center overflow-hidden">
+    <div className="w-full h-56 bg-black rounded-xl flex items-center justify-center p-4">
   <img
     src={image}
     alt={title}
-    className="max-w-full max-h-full object-contain"
+    className="w-full h-full object-contain"
   />
 </div>
 
