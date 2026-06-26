@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Lock, Mail } from "lucide-react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Admin = () => {
@@ -37,6 +38,7 @@ return (
         transition={{ duration: 0.7 }}
         className="w-full max-w-md bg-dark-300 rounded-3xl shadow-2xl p-8"
     >
+        {/* Heading */}
         <div className="text-center mb-8">
         <h2 className="text-4xl font-bold text-white mb-2">
             Admin <span className="text-purple">Login</span>
@@ -47,6 +49,7 @@ return (
         </p>
         </div>
 
+        {/* Form */}
         <form onSubmit={handleLogin} className="space-y-6">
 
           {/* Email */}
@@ -90,13 +93,18 @@ return (
             <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="text-white ml-2 font-semibold"
+                className="text-purple ml-2 hover:text-white transition"
             >
-                {showPassword ? "HIDE" : "SHOW"}
+                {showPassword ? (
+                <FaEyeSlash size={20} />
+                ) : (
+                <FaEye size={20} />
+                )}
             </button>
             </div>
         </div>
 
+          {/* Login Button */}
         <button
             type="submit"
             className="w-full bg-purple hover:bg-purple-700 text-white py-3 rounded-lg font-semibold transition duration-300"
