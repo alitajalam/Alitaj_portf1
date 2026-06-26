@@ -36,7 +36,7 @@ const ProjectCard = ({ title, description, image, tech }) => {
 
         {/* Buttons */}
         <div className="flex gap-3 mt-auto">
-        <a
+  <a
   href="https://my-portfolio-alpha-pink-40.vercel.app/"
   target="_blank"
   rel="noopener noreferrer"
