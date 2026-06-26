@@ -4,7 +4,7 @@ const AdminDashboard = () => {
 return (
     <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-pink-500">
-        Welcome Admin 🎉
+        Welcome Admin Alitaj 🎉
     </h1>
     </div>
 );
