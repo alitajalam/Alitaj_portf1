@@ -36,19 +36,23 @@ const ProjectCard = ({ title, description, image, tech }) => {
 
         {/* Buttons */}
         <div className="flex gap-3 mt-auto">
-          <a
-            href="https://my-portfolio-alpha-pink-40.vercel.app/"
-            className="flex-1 text-center px-4 py-3 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition duration-300"
-          >
-            View Demo
-          </a>
+        <a
+  href="https://my-portfolio-alpha-pink-40.vercel.app/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex-1 text-center px-4 py-3 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition duration-300"
+>
+  View Demo
+</a>
 
-          <a
-            href="https://github.com/alitajalam/Alitaj_portf1.git"
-            className="flex-1 text-center px-4 py-3 border border-purple-600 text-white rounded-xl hover:bg-purple-600 transition duration-300"
-          >
-            Code
-          </a>
+        <a
+  href="https://github.com/alitajalam/Alitaj_portf1"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex-1 text-center px-4 py-3 border border-purple-600 text-white rounded-xl hover:bg-purple-600 transition duration-300"
+>
+  Code
+</a>
         </div>
 
       </div>
