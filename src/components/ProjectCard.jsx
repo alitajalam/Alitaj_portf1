@@ -44,7 +44,7 @@ const ProjectCard = ({ title, description, image, tech }) => {
           </a>
 
           <a
-            href="https://github.com/alitajalam/my-portfolio"
+            href="https://github.com/alitajalam/Alitaj_portf1.git"
             className="flex-1 text-center px-4 py-3 border border-purple-600 text-white rounded-xl hover:bg-purple-600 transition duration-300"
           >
             Code
