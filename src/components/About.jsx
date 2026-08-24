@@ -25,7 +25,7 @@ const About = () => {
 
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-8">
             Get to know more about my background, skills,
-            and passion for full stack development.
+            and passion for full web stack development.
           </p>
         </motion.div>
 
@@ -75,7 +75,7 @@ const About = () => {
 
             {/* Paragraphs */}
             <p className="text-gray-300 text-lg leading-8 mb-6">
-              I'm a passionate Full Stack Developer with
+              I'm a passionate Full Stack web Developer with
               experience in building responsive and modern
               web applications using React.js, Node.js,
               Express.js, and MongoDB.

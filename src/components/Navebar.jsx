@@ -14,7 +14,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="text-3xl font-bold text-white">
           Alitaj
-          <span className="text-purple">_00</span>
+          <span className="text-purple">_Alam</span>
 
           <span className="w-3 h-3 bg-purple rounded-full inline-block ml-2"></span>
         </Link>
